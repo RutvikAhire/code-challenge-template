@@ -1,0 +1,79 @@
+==> 2023-02-19 19:28:06 <==
+# cmd: /home/rutvik/miniconda3/bin/conda create -n c_venv python=3.10
+# conda version: 23.1.0
++defaults/linux-64::_libgcc_mutex-0.1-main
++defaults/linux-64::_openmp_mutex-5.1-1_gnu
++defaults/linux-64::bzip2-1.0.8-h7b6447c_0
++defaults/linux-64::ca-certificates-2023.01.10-h06a4308_0
++defaults/linux-64::certifi-2022.12.7-py310h06a4308_0
++defaults/linux-64::ld_impl_linux-64-2.38-h1181459_1
++defaults/linux-64::libffi-3.4.2-h6a678d5_6
++defaults/linux-64::libgcc-ng-11.2.0-h1234567_1
++defaults/linux-64::libgomp-11.2.0-h1234567_1
++defaults/linux-64::libstdcxx-ng-11.2.0-h1234567_1
++defaults/linux-64::libuuid-1.41.5-h5eee18b_0
++defaults/linux-64::ncurses-6.4-h6a678d5_0
++defaults/linux-64::openssl-1.1.1t-h7f8727e_0
++defaults/linux-64::pip-22.3.1-py310h06a4308_0
++defaults/linux-64::python-3.10.9-h7a1cb2a_0
++defaults/linux-64::readline-8.2-h5eee18b_0
++defaults/linux-64::setuptools-65.6.3-py310h06a4308_0
++defaults/linux-64::sqlite-3.40.1-h5082296_0
++defaults/linux-64::tk-8.6.12-h1ccaba5_0
++defaults/linux-64::wheel-0.38.4-py310h06a4308_0
++defaults/linux-64::xz-5.2.10-h5eee18b_1
++defaults/linux-64::zlib-1.2.13-h5eee18b_0
++defaults/noarch::tzdata-2022g-h04d1e81_0
+# update specs: ['python=3.10']
+==> 2023-02-19 19:44:08 <==
+# cmd: /home/rutvik/miniconda3/bin/conda install --name c_venv pylint -y
+# conda version: 23.1.0
++defaults/linux-64::astroid-2.11.7-py310h06a4308_0
++defaults/linux-64::dill-0.3.6-py310h06a4308_0
++defaults/linux-64::lazy-object-proxy-1.6.0-py310h7f8727e_0
++defaults/linux-64::platformdirs-2.5.2-py310h06a4308_0
++defaults/linux-64::pylint-2.14.5-py310h06a4308_0
++defaults/linux-64::tomli-2.0.1-py310h06a4308_0
++defaults/linux-64::tomlkit-0.11.1-py310h06a4308_0
++defaults/linux-64::typing_extensions-4.4.0-py310h06a4308_0
++defaults/linux-64::wrapt-1.14.1-py310h5eee18b_0
++defaults/noarch::flit-core-3.6.0-pyhd3eb1b0_0
++defaults/noarch::isort-5.9.3-pyhd3eb1b0_0
++defaults/noarch::mccabe-0.7.0-pyhd3eb1b0_0
+# update specs: ['pylint']
+==> 2023-02-19 19:45:00 <==
+# cmd: /home/rutvik/miniconda3/bin/conda install --name c_venv autopep8 -y
+# conda version: 23.1.0
++defaults/linux-64::pycodestyle-2.10.0-py310h06a4308_0
++defaults/noarch::autopep8-1.6.0-pyhd3eb1b0_1
++defaults/noarch::toml-0.10.2-pyhd3eb1b0_0
+# update specs: ['autopep8']
+==> 2023-02-19 20:05:58 <==
+# cmd: /home/rutvik/miniconda3/bin/conda install --name c_venv flask
+# conda version: 23.1.0
++defaults/linux-64::click-8.0.4-py310h06a4308_0
++defaults/linux-64::flask-2.2.2-py310h06a4308_0
++defaults/linux-64::jinja2-3.1.2-py310h06a4308_0
++defaults/linux-64::markupsafe-2.1.1-py310h7f8727e_0
++defaults/linux-64::werkzeug-2.2.2-py310h06a4308_0
++defaults/noarch::itsdangerous-2.0.1-pyhd3eb1b0_0
+# update specs: ['flask']
+==> 2023-02-19 20:10:56 <==
+# cmd: /home/rutvik/miniconda3/bin/conda install --name c_venv pandas -y
+# conda version: 23.1.0
++defaults/linux-64::blas-1.0-mkl
++defaults/linux-64::bottleneck-1.3.5-py310ha9d4c09_0
++defaults/linux-64::intel-openmp-2021.4.0-h06a4308_3561
++defaults/linux-64::mkl-2021.4.0-h06a4308_640
++defaults/linux-64::mkl-service-2.4.0-py310h7f8727e_0
++defaults/linux-64::mkl_fft-1.3.1-py310hd6ae3a3_0
++defaults/linux-64::mkl_random-1.2.2-py310h00e6091_0
++defaults/linux-64::numexpr-2.8.4-py310h8879344_0
++defaults/linux-64::numpy-1.23.5-py310hd5efca6_0
++defaults/linux-64::numpy-base-1.23.5-py310h8e6c178_0
++defaults/linux-64::packaging-22.0-py310h06a4308_0
++defaults/linux-64::pandas-1.5.2-py310h1128e8f_0
++defaults/linux-64::pytz-2022.7-py310h06a4308_0
++defaults/noarch::python-dateutil-2.8.2-pyhd3eb1b0_0
++defaults/noarch::six-1.16.0-pyhd3eb1b0_1
+# update specs: ['pandas']

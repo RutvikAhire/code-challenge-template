@@ -1,0 +1,11 @@
+prefix=/home/rutvik/miniconda3/envs/c_venv
+exec_prefix=/home/rutvik/miniconda3/envs/c_venv
+libdir=/home/rutvik/miniconda3/envs/c_venv/lib
+includedir=/home/rutvik/miniconda3/envs/c_venv/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.32.1
+Requires:
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid

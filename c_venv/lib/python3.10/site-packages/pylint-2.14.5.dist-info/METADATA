@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: pylint
+Version: 2.14.5
+Summary: python code static checker
+Author: Python Code Quality Authority
+Author-email: code-quality@python.org
+License: GPL-2.0-or-later
+Project-URL: Homepage, https://www.pylint.org/
+Project-URL: Source Code, https://github.com/PyCQA/pylint
+Project-URL: What's New, https://pylint.pycqa.org/en/latest/whatsnew/
+Project-URL: Bug Tracker, https://github.com/PyCQA/pylint/issues
+Project-URL: Discord Server, https://discord.com/invite/Egy6P8AMB5
+Project-URL: Docs: User Guide, https://pylint.pycqa.org/en/latest/
+Project-URL: Docs: Contributing, https://pylint.pycqa.org/en/latest/development_guide/contribute.html
+Project-URL: Docs: Technical Reference, https://pylint.pycqa.org/en/latest/technical_reference/index.html
+Keywords: static code analysis linter python lint
+Platform: UNKNOWN
+Classifier: Development Status :: 6 - Mature
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Debuggers
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing
+Requires-Python: >=3.7.2
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+License-File: CONTRIBUTORS.txt
+Requires-Dist: dill (>=0.2)
+Requires-Dist: platformdirs (>=2.2.0)
+Requires-Dist: astroid (<=2.12.0-dev0,>=2.11.6)
+Requires-Dist: isort (<6,>=4.2.5)
+Requires-Dist: mccabe (<0.8,>=0.6)
+Requires-Dist: tomlkit (>=0.10.1)
+Requires-Dist: typing-extensions (>=3.10.0) ; python_version < "3.10"
+Requires-Dist: tomli (>=1.1.0) ; python_version < "3.11"
+Requires-Dist: colorama (>=0.4.5) ; sys_platform == "win32"
+Provides-Extra: spelling
+Requires-Dist: pyenchant (~=3.2) ; extra == 'spelling'
+Provides-Extra: testutils
+Requires-Dist: gitpython (>3) ; extra == 'testutils'
+
+UNKNOWN
+
