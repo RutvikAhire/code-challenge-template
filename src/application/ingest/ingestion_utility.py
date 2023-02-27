@@ -15,9 +15,23 @@ class IngestionUtility:
     wx_data_directory = current_app.config['WX_DATA_DIR']
     formatter = logging.Formatter('%(asctime)s: %(message)s')
 
-    def __init__(self, ingestion_files, ingestion_type):
+    def __init__(self, ingestion_files=None, ingestion_type=None):
         self.ingestion_files = ingestion_files
         self.ingestion_type = ingestion_type
+        # Set input parameters if ingestion not triggered via front end
+        if self.ingestion_files is None:
+            all_files = os.listdir(self.wx_data_directory)
+            all_files.sort()
+            for file in all_files:
+                if '.txt' not in file:
+                    all_files.remove(file)
+            if len(all_files) == 0:
+                raise Exception(
+                    'No files found in "wx_data_files" directory. Upload single wx_data file or contact admin.')
+            else:
+                self.ingestion_files = all_files
+        if self.ingestion_type is None:
+            self.ingestion_type = 'Non-Frontend: ingestion_utility.py script execution'
 
         # Setup process logger
         self.log_folder_path = f'{self.root_directory}/logs'

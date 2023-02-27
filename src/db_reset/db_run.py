@@ -3,8 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://///home/rutvik/Documents/colaberry_app/src/db_reset/database.db'
-print(app.config['SQLALCHEMY_DATABASE_URI'])
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://///home/rutvik/Documents/code-challenge-template/src/db_reset/database.db'
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
