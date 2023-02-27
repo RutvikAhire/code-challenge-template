@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row">
+    <legend class="text-center font-monospace">Weather Statistics</legend>
+    </br>
+    <div class="col-2">
+        <p><a class="btn btn-secondary" href="{{ url_for('analytics.analytics_download_report') }}">
+                Download Report</a>
+        </p>
+    </div>
+    <div class="col-2">
+        <p><a class="btn btn-secondary" href="{{ url_for('analytics.analytics_generate_report') }}">
+                Generate New Report</a></p>
+    </div>
+</div>
+</br>
+<div class="row">
+    <div class="table-responsive">
+        <table id="report"
+            class="table table-secondary table-striped table-hover table-bordering vertical-align-middle caption-top">
+            <thead align="center">
+                <tr class="table-dark vertical-align-middle">
+                    <th scope="col">YEAR</th>
+                    <th scope="col">STATION ID</th>
+                    <th scope="col">AVG MAX TEMP (celsius)</th>
+                    <th scope="col">AVG MIN TEMP (celsius)</th>
+                    <th scope="col">TOTAL ACCUMULATED PRECIPITATION (cm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for year in report_json.keys() %}
+                {% for station in report_json[year].keys() %}
+                <tr>
+                    <td class="text-center">{{ year }}</td>
+                    <td class="text-center">{{ station }}</td>
+                    <td class="text-center">{{ report_json[year][station]['avg_max_temperature'] }}</td>
+                    <td class="text-center">{{ report_json[year][station]['avg_min_temperature'] }}</td>
+                    <td class="text-center">{{ report_json[year][station]['total_accumulated_precipitation'] }}</td>
+                </tr>
+                {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#report').DataTable({
+            "pageLength": 20,
+            "lengthChange": false
+        });
+    });
+</script>
+{% endblock content %}

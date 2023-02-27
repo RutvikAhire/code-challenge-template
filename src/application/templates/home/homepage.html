@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row">
+    <legend class="text-center">What would you like to do?</legend>
+    <div class="col">
+        <div class="card bg-light border-secondary">
+            <div class="card-body">
+                <h5 class="card-title text-center font-monospace">Upload</h5>
+                <p class="card-text text-center text-muted">Ingest wtx_data file</p>
+                <div class="text-center"><a href="{{ url_for('ingest.data_loader_selector') }}"
+                        class="btn btn-secondary">Select</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card bg-light border-secondary">
+            <div class="card-body">
+                <h5 class="card-title text-center font-monospace">Analytics</h5>
+                <p class="card-text text-center text-muted">Explore data analysis results</p>
+                <div class="text-center"><a href="{{ url_for('analytics.analytics_hub') }}"
+                        class="btn btn-secondary">Select</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card bg-light border-secondary">
+            <div class="card-body">
+                <h5 class="card-title text-center font-monospace">API</h5>
+                <p class="card-text text-center text-muted">Utilize API REST Explorer</p>
+                <div class="text-center"><a href="{{ url_for('api.doc') }}" class="btn btn-secondary">Select</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

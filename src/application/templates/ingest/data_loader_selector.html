@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <div class="card bg-light border-secondary">
+            <div class="card-body">
+                <h5 class="card-title text-center font-monospace">Single file ingestion</h5>
+                <p class="card-text text-center text-muted">Ingest single wtx_data file into database</p>
+                <div class="text-center"><a href="{{ url_for('ingest.data_loader_single') }}"
+                        class="btn btn-secondary">Select</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card bg-light border-secondary">
+            <div class="card-body">
+                <h5 class="card-title text-center font-monospace">Bulk file ingestion</h5>
+                <p class="card-text text-center text-muted">Bulk ingestion of all existing wtx_data files into database
+                </p>
+                <div class="text-center"><a href="{{ url_for('ingest.data_loader_batch') }}"
+                        class="btn btn-secondary">Select</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
