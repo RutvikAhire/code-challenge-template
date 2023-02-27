@@ -92,4 +92,4 @@ def data_loader_batch():
             flash(
                 f'Ingestion of {len(data_loader_batch.all_files)} wx_data files in progress.',
                 'success')
-            return redirect(url_for('home.homepage'))
+    return redirect(url_for('ingest.data_loader_selector'))
