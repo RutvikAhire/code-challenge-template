@@ -1,6 +1,5 @@
 import requests
 import unittest
-import os
 
 
 class TestWeatherUtils(unittest.TestCase):
