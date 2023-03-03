@@ -6,8 +6,7 @@ import os
 class TestWeatherUtils(unittest.TestCase):
     response = None
     response_status_code = None
-    request_root_url = "http://localhost:8888/api"
-    os.system("python3 src/run.py --port 8888")
+    request_root_url = "http://localhost:5000/api"
 
     def test_apiweather_get(self):
         # Response with no query string
