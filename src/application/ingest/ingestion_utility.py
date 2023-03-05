@@ -1,7 +1,11 @@
-import pandas as pd
+"""
+This module contains methods used for ingesting data from wx_data files into database.db
+"""
+
 from datetime import datetime
 import logging
 import os
+import pandas as pd
 from flask import current_app
 from sqlalchemy import insert
 from application import db, executor
@@ -10,6 +14,10 @@ from application.analytics.stats_utility import StatsUtilities
 
 
 class IngestionUtility:
+    """
+    This module contains methods used for ingesting data from wx_data files into database.db
+    """
+
     root_directory = current_app.config["ROOT_DIR"]
     wx_data_directory = current_app.config["WX_DATA_DIR"]
     formatter = logging.Formatter("%(asctime)s: %(message)s")
@@ -57,6 +65,9 @@ class IngestionUtility:
         self.logger.info("=============== ===================== ===============")
 
     def close_logger(self):
+        """
+        This method closes the logger after process completion
+        """
         handlers = self.logger.handlers[:]
         for handler in handlers:
             handler.close()
@@ -72,6 +83,9 @@ class IngestionUtility:
         StatsUtilities.analytics_orchestrator(self=stats_object)
 
     def ingestor(self):
+        """
+        This method contains the ingestion logic
+        """
         try:
             process_start_time = datetime.now()
             self.logger.info("Process Start DateTime: %s", f"{process_start_time}")

@@ -1,5 +1,5 @@
 """
-This module deals with the the following weather data APIs:
+This module deals with serving the following weather endpoints:
     - /api/weather
     - /api/weather/stats
 """

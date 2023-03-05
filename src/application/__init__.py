@@ -1,3 +1,7 @@
+"""
+This module initializes the flask app
+"""
+
 from flask import Flask
 from flask_executor import Executor
 from flask_sqlalchemy import SQLAlchemy
@@ -11,7 +15,6 @@ ma = Marshmallow()
 
 
 def create_app(config_class=Config):
-
     app = Flask(__name__)
     app.config.from_object(Config)
 
@@ -28,6 +31,6 @@ def create_app(config_class=Config):
         app.register_blueprint(HOME)
         app.register_blueprint(INGEST)
         app.register_blueprint(ANALYTICS)
-        app.register_blueprint(api, url_prefix='/api')
+        app.register_blueprint(api, url_prefix="/api")
 
     return app

@@ -1,5 +1,5 @@
 """
-Empty
+Routes file for '/analytics' url paths
 """
 
 import os

@@ -1,7 +1,16 @@
+"""
+Contains database.db DDL
+"""
+
+
 from application import db, ma
 
 
 class Readings(db.Model):
+    """
+    DDL for 'readings' table which contains weather records from wx_data files
+    """
+
     __tablename__ = "readings"
     reading_id = db.Column(db.String(18), primary_key=True)
     station_id = db.Column(db.String(11), unique=False, nullable=False, index=True)
@@ -14,7 +23,14 @@ class Readings(db.Model):
     schema = "coding_exercise"
 
     def __repr__(self):
-        return f"Readings('{self.reading_id}', '{self.station_id}', '{self.year}-{self.month}-{self.day}', '{self.max_temperature}', '{self.min_temperature}', '{self.precipitation}')"
+        return f"Readings(\
+            '{self.reading_id}'\
+                ,'{self.station_id}'\
+                    ,'{self.year}-{self.month}-{self.day}'\
+                        ,'{self.max_temperature}'\
+                            ,'{self.min_temperature}'\
+                                ,'{self.precipitation}'\
+                                    )"
 
 
 class ReadingsSchema(ma.SQLAlchemySchema):
@@ -50,6 +66,10 @@ readings_schema = ReadingsSchema(many=True)
 
 
 class Results(db.Model):
+    """
+    DDL for 'results' table which contains calculated weather data statistics
+    """
+
     __tablename__ = "results"
     result_id = db.Column(db.String(15), primary_key=True)
     year = db.Column(db.Integer, unique=False, nullable=True, index=True)
@@ -62,7 +82,14 @@ class Results(db.Model):
     schema = "coding_exercise"
 
     def __repr__(self):
-        return f"Results('{self.result_id}', '{self.year}', '{self.station_id}', '{self.avg_max_temperature}', '{self.avg_min_temperature}', '{self.total_accumulated_precipitation}')"
+        return f"Results(\
+            '{self.result_id}'\
+                ,'{self.year}'\
+                    ,'{self.station_id}'\
+                        ,'{self.avg_max_temperature}'\
+                            ,'{self.avg_min_temperature}'\
+                                ,'{self.total_accumulated_precipitation}'\
+                                    )"
 
 
 class ResultsSchema(ma.SQLAlchemySchema):

@@ -1,6 +1,8 @@
-import os
+"""
+This module establishes flask app configuration parameters at the time of create_app()
+"""
 
-# from os import urandom
+import os
 
 
 class Config:

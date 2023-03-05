@@ -1,5 +1,5 @@
 """
-Empty
+Contains methods for calculating weather statistics
 """
 
 import json
@@ -14,7 +14,7 @@ from application.data_model import Readings, Results
 
 class StatsUtilities:
     """
-    Empty
+    Contains methods for calculating weather statistics
     """
 
     root_directory = current_app.config["ROOT_DIR"]
@@ -49,6 +49,9 @@ class StatsUtilities:
         self.logger.info("=============== ===================== ===============")
 
     def close_logger(self):
+        """
+        Closes the logger after process completion
+        """
         handlers = self.logger.handlers[:]
         for handler in handlers:
             handler.close()

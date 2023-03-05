@@ -1,5 +1,5 @@
 """
-This module takes care of routing and other static functions related to '/ingest' path
+Routes file for '/ingest' url paths
 """
 
 import os

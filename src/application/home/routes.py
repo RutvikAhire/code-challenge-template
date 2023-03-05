@@ -1,4 +1,8 @@
-from flask import Blueprint, request, render_template, redirect, url_for
+"""
+Routes file for '/home' url paths
+"""
+
+from flask import Blueprint, render_template, redirect, url_for
 
 HOME = Blueprint("home", __name__)
 
