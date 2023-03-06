@@ -1,0 +1,128 @@
+-------------------------
+Problem 1 - Data Modeling
+-------------------------
+> Database: SQLlite (available at '/src/application/database.db')
+> ORM: SQLAlchemy
+> Complete DDL available in '/src/application/data_model.py
+
+class Readings(db.Model):
+    """
+    DDL for 'readings' table which contains weather records from wx_data files
+    """
+
+    __tablename__ = "readings"
+    reading_id = db.Column(db.String(18), primary_key=True)
+    station_id = db.Column(db.String(11), unique=False, nullable=False, index=True)
+    year = db.Column(db.Integer, unique=False, nullable=True, index=True)
+    month = db.Column(db.Integer, unique=False, nullable=True, index=True)
+    day = db.Column(db.Integer, unique=False, nullable=True, index=True)
+    max_temperature = db.Column(db.Float(4), unique=False, nullable=True)
+    min_temperature = db.Column(db.Float(4), unique=False, nullable=True)
+    precipitation = db.Column(db.Float(4), unique=False, nullable=True)
+    schema = "coding_exercise"
+
+
+
+---------------------
+Problem 2 - Ingestion
+---------------------
+
+> ingestion code available at 'src/application/ingest/ingestion_utility.py'
+> database.db file kept blank due to GitHub file upload limit of 100 MB
+> log output available at '/src/logs/ingestion_2023-03-03_01-24-37.log'
+> Average ingestion time for all wx_data files: 49 seconds
+
+
+
+-------------------------
+Problem 3 - Data Analysis
+-------------------------
+
+> Database: SQLlite (available at '/src/application/database.db')
+> ORM: SQLAlchemy
+> Complete DDL available in '/src/application/data_model.py
+
+class Results(db.Model):
+    """
+    DDL for 'results' table which contains calculated weather data statistics
+    """
+
+    __tablename__ = "results"
+    result_id = db.Column(db.String(15), primary_key=True)
+    year = db.Column(db.Integer, unique=False, nullable=True, index=True)
+    station_id = db.Column(db.String(11), unique=False, nullable=False, index=True)
+    avg_max_temperature = db.Column(db.Float(4), unique=False, nullable=True)
+    avg_min_temperature = db.Column(db.Float(4), unique=False, nullable=True)
+    total_accumulated_precipitation = db.Column(
+        db.Float(4), unique=False, nullable=True
+    )
+    schema = "coding_exercise"
+
+> Code used to calculate weather statistics available in '/src/application/analytics/stats_utility.py'
+
+for year in years_list:
+    for station in station_ids:
+        avg_max_temperature_calculator = round(sum(max_temperature_values) / len(max_temperature_values), 4)
+        avg_min_temperature_calculator = round(sum(min_temperature_values) / len(min_temperature_values), 4)
+        total_accumulated_precipitation_calculator = round(sum(precipitation_values), 4)
+
+> Weather statistics not written in database.db due to GitHub file size limit
+    - Results available in '/src/results/results_2023-03-03_01-26-41.json'
+
+
+
+--------------------
+Problem 4 - REST API
+--------------------
+
+> Web framework: Flask
+> Libraries: flask_marshmallow, marshmallow_sqlalchmey, flask_restx
+> Swagger documentation endpoint: /api
+> API endpoints:
+    - /api/weather
+        - returns all weather records
+        - can be queried based on year, station, page number
+            - sample query: http://localhost:5000/api/weather?year=2012&station=USC00110072&page=1
+    - /api/weather/stats
+        - returns all weather statistics
+        - can be queried based on year, station, page number
+            - sample query: http://localhost:5000/api/weather/stats?year=2012&station=USC00110072&page=1
+> Steps to run API locally:
+    - Step 1: terminal
+        - $ git clone https://github.com/RutvikAhire/code-challenge-template.git
+        - $ cd code-challenge-template/src/
+        - $ pip3 install -r requirements.txt
+        - $ python3 run.py
+    - Step 2: browser
+        - http://localhost:5000/ingest/batch (ingests all files wx_data in database.db)
+        - http://localhost:5000/analytics/generate_report (calculates weather statistics based on weather records in database.db)
+        - http://localhost:5000/api/rest_explorer to try out available api endpoints
+    - Testing (requires step 1 and 2 completed)
+        - terminal
+            - $ cd code-challenge-template/src/tests/
+            - $ python3 test_weather_utils.py
+
+
+
+-------------------------
+Extra Credit - Deployment
+-------------------------
+
+> Suggested tools and AWS services to be used to deploy the flask app:
+    - API: Amazon API Gateway
+    - Database service:
+        - database.db: Amazon RDS for PostgreSQL
+        - wx_data files: Amazon DocumentDB
+    - scheduled version of your data ingestion code?
+        -  GitHub Actions - AWS Elastic Beanstalk integration
+
+
+
+-----------------------
+Submitting Your Answers
+-----------------------
+
+> linter: pylint
+> formatter: black
+> testing: unittest
+> Git repository: https://github.com/RutvikAhire/code-challenge-template
